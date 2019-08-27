@@ -1,0 +1,291 @@
+@import url('https://fonts.googleapis.com/css?family=Lato:300,400,700,900&display=swap');
+
+* {
+    box-sizing: border-box;
+}
+
+a:any-link {
+    text-decoration: none;
+    color: #00796B;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Lato', sans-serif;
+    background-color: #fbfbfb;
+    color: #555;
+}
+
+header {
+    width: 100%;
+    border-bottom: 2px solid #009688;
+    padding: 10px 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: white;
+}
+
+#logo {
+    padding: 0 10px;
+}
+
+#logo img {
+    width: 170px;
+}
+
+header nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    font-weight: 700;
+    text-transform: lowercase;
+    letter-spacing: 1px;
+    font-size: 18px;
+}
+
+header nav ul li {
+    display: inline-block;
+}
+
+header nav ul li a {
+    text-decoration: none;
+    color: #00796B;
+    font-weight: 600;
+    padding: 10px;
+}
+
+main {
+    min-height: 75vh;
+}
+
+main section.livros {
+    padding: 30px 0;
+    display: flex;
+}
+
+main section.livros .container {
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
+    flex-wrap: wrap;
+}
+
+main section article {
+    width: 250px;
+    box-shadow: 0px 8px 11px -1px #ccc;
+    padding: 15px;
+    margin: 0 5px 40px;
+}
+
+main section.livros article h1 {
+    text-transform: uppercase;
+    margin: 10px 0;
+}
+
+main section article .img-poster {
+    background-color: #ccc;
+    background-position: center;
+    background-size: cover;
+    width: 100%;
+    height: 250px;
+}
+
+main section article .stars img,
+.filter-stars img {
+    width: 20px;
+}
+
+footer {
+    text-align: center;
+    padding: 20px 10px;
+    background-color: whitesmoke;
+    box-shadow: inset 0px 10px 11px -14px #000;
+}
+
+.container {
+    width: 1200px;
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 15px;
+}
+.modal-ativo {
+    overflow: hidden;
+}
+.modal-ativo .modal{
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    overflow-y: auto;
+}
+.modal {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 9;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+.modal-conteudo {
+    width: 700px;
+    max-width: 100%;
+    min-height: 200px;
+    background-color: #fff;
+    padding: 25px;
+    margin: 30px 0;
+}
+
+.modal-conteudo .modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 20px;
+}
+
+.modal-conteudo .modal-header .botao-fechar {
+    font-size: 20px;
+    display: block;
+    line-height: 12px;
+}
+
+.modal-conteudo .modal-header h1 {
+    margin: 0;
+    text-transform: uppercase
+}
+
+.modal-conteudo .filter-stars {
+    display: block;
+}
+
+.modal-conteudo .poster {
+    width: 300px;
+    max-width: 100%;
+    margin: 0 auto 20px;
+
+}
+
+.modal-conteudo .modal-body {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+.modal-conteudo .modal-body .descricao {
+    min-width: 350px;
+}
+
+.modal-conteudo .modal-body .descricao p {
+    padding: 0 20px;
+    margin: 0;
+}
+
+.modal-conteudo .modal-body .descricao form {
+    margin: 20px;
+    border-top: 1px dotted #ccc;
+}
+
+.modal-conteudo .modal-body .descricao form label:not(.filter-stars) {
+    text-transform: lowercase;
+    padding: 10px 0;
+    display: block;
+}
+
+.modal-conteudo .modal-body .descricao form textarea {
+    width: 100%;
+    resize: none;
+    padding: 10px;
+}
+
+.modal-conteudo .modal-body .descricao form .botaoEnviar {
+    border: none;
+    background-color: #f98100;
+    color: white;
+    padding: 8px 30px;
+    margin: 10px 0 0;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.modal form label.filter-stars {
+    display: block;
+    position: relative;
+    padding-left: 25px;
+    cursor: pointer;
+}
+
+.modal form label.filter-stars input[type='radio'] {
+    display: none;
+}
+
+.modal form label.filter-stars input[type='radio']:checked~.checkmark {
+    opacity: 1;
+    transition: 0.1s ease;
+}
+
+.modal form label.filter-stars .checkmark {
+    opacity: 0;
+    position: absolute;
+    width: 7px;
+    height: 11px;
+    border-right: 3px solid #f98100;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(40deg);
+    top: 6px;
+    left: 8px;
+    border-radius: 2px;
+    border-bottom: 3px solid #f98100;
+}
+
+.modal form label.filter-stars:before {
+    content: '';
+    position: absolute;
+    top: 2px;
+    left: 0;
+    width: 19px;
+    height: 19px;
+    border: 2px solid #ffbb72;
+    border-radius: 2px;
+}
+
+.modal form label.filter-stars img {
+    width: 20px;
+    margin: 3px;
+}
+
+@media (max-width: 825px) {
+    main section.livros .container {
+        justify-content: space-around;
+    }
+
+    main section article {
+        width: 270px;
+    }
+
+    main .titulo {
+        text-align: center;
+    }
+}
+
+@media (max-width: 690px) {
+    .modal .modal-conteudo .modal-body{
+        flex-wrap: wrap;
+    }
+}
+
+@media (max-width: 560px) {
+    main section.livros .container article {
+        width: 80%;
+    }
+
+    main section.livros .container article .img-poster {
+
+        height: 250px;
+    }
+}
